@@ -3,7 +3,7 @@ _Some utility functions jQuery_
 
 ## Download
 
-`bower install becojo/jquery.func`
+`bower install Becojo/jquery.func`
 
 ## Functions
 ### $.fn.reverse() → jQuery object
