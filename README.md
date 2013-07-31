@@ -1,6 +1,10 @@
 # jquery.func
 _Some utility functions jQuery_
 
+## Download
+
+`bower install becojo/jquery.func`
+
 ## Functions
 ### $.fn.reverse() → jQuery object
 Props to Michael Geary for this functions. It reverses the elements of a jQuery object.
