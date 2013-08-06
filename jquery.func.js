@@ -53,4 +53,20 @@
     return this.map(method);
   };
   
+  $.fn.reduce = function(iterator, seed) {
+    var initial = arguments.length == 1;
+    var result = seed;
+    
+    this.each(function(index) {
+      if(initial) {
+        result = this;
+        initial = false;
+      } else {
+        result = iterator.call(this, result, this, index);
+      }
+    });
+    
+    return result;
+  };
+  
 })(jQuery);

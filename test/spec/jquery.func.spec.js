@@ -131,3 +131,27 @@ describe("$.fn.invoke", function() {
   });
   
 });
+
+describe("$.fn.reduce", function() {
+  var $obj;
+  
+  it("should set the seed to the first element when no seed is specified", function() {
+    $obj = $('<div></div><div></div><div></div>');
+    
+    $obj.reduce(function(sum, value, index) {
+      if(index == 1) {
+        expect(sum).toBe($obj[0]);
+      }
+    });
+  });
+  
+  it("should invoke the iterator on all elements when a seed is specified", function() {
+    $obj = $('<div></div><div></div><div></div>');
+    
+    var i = 0;
+    $obj.reduce(function(sum, value) {
+      expect(value).toBe($obj[i++]);
+    }, 0);
+  });
+  
+});
