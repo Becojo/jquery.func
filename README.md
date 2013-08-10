@@ -97,6 +97,17 @@ Returns a new jQuery object where the jQuery function named `name` has been appl
 	var getId = $.method("attr", "id");
 	$("div").map(getId);
 
+### $.fn.reduce(iterator, seed) → Object
+
+Allows to reduce a list into a single value.
+
+**Example**: Finding the biggest element in a list
+
+	$([1, 2, 3]).inject(function(biggest, value) {
+		return value > biggest ? value : biggest;
+	});
+
+
 ## License
 
 This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying UNLICENSE file.
