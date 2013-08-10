@@ -9,6 +9,7 @@
   
   "ignore": [
     "**/.*",
+    "CHANGELOG.md"
     "README.md",
     "UNLICENSE",
     "test"
