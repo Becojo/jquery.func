@@ -57,12 +57,12 @@
     var initial = arguments.length == 1;
     var result = seed;
     
-    this.each(function(index) {
+    this.each(function(index, element) {
       if(initial) {
         result = this;
         initial = false;
       } else {
-        result = iterator.call(this, result, this, index);
+        result = iterator.call(this, result, element, index);
       }
     });
     
