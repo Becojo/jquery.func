@@ -23,7 +23,9 @@ See `test/lib/jasmine-1.3.1/MIT.LICENSE`.
 
 Props to Michael Geary for this functions. It reverses the elements of a jQuery object.
 
-	$([1,2,3]).reverse(); // [3,2,1]
+```javascript
+$([1,2,3]).reverse(); // [3,2,1]
+```
 
 **Note**: It modifies the object and does not create a new one.
 
@@ -36,10 +38,12 @@ Props to Michael Geary for this functions. It reverses the elements of a jQuery 
 Returns `true` if all of the elements in the jQuery object pass the `iterator` truth test.
 
 **Example**: Determining if all number in the given list are even.
-	
-	var even = function() { return this % 2 == 0 };
-	$([1,2,3,4]).all(even); // false;
-	$([2,4,6,8]).all(even); // true;
+
+```javascript
+var even = function() { return this % 2 == 0 };
+$([1,2,3,4]).all(even); // false;
+$([2,4,6,8]).all(even); // true;
+```
 
 **Note**: If any of the elements does not pass the truth test, the function quits immediately and returns `false`.
 
@@ -49,7 +53,9 @@ Returns `true` if any of the elements contained in the jQuery object pass the `i
 
 **Example**: determining if any number in the given list is even.
 
-	$([1,3,5,7,8]).any(even); // true
+```javascript
+$([1,3,5,7,8]).any(even); // true
+```
 
 **Note**: On the first element that passes the truth test, the function quits immediately and returns `true`.
 
@@ -59,12 +65,14 @@ Invokes the interceptor with the current jQuery object and returns the same obje
 
 **Example**: `console.log` the value of the jQuery object in a chain.
 
-	var log = function(e){ 
-		// the value of `this` is equal to `e`
-		console.log(e);
-	};
-	
-	$("div").tap(log).reverse().tap(log);
+```javascript
+var log = function(e){ 
+	// the value of `this` is equal to `e`
+	console.log(e);
+};
+
+$("div").tap(log).reverse().tap(log);
+```
 
 **Note**: The object can be modified in the `interceptor`.
 
@@ -74,15 +82,17 @@ Returns a closure of the jQuery function named `name` with the arguments `args`.
 
 **Example**: Fixing `$.fn.is` which only checks the first element.
 
-	var blinking = $.method("is", "div.blinking");
-	
-	if($("header > *").any(blinking)) {
-		// ...
-	}
-	
-	if($("footer > *").all(blinking)) {
-		// ...
-	}
+```javascript
+var blinking = $.method("is", "div.blinking");
+
+if($("header > *").any(blinking)) {
+	// ...
+}
+
+if($("footer > *").all(blinking)) {
+	// ...
+}
+```
 	
 ### $.fn.invoke(name, [args, ...]) → jQuery object
 
@@ -90,12 +100,14 @@ Returns a new jQuery object where the jQuery function named `name` has been appl
 
 **Example**: Creating an array containing the value of an attribute.
 
-	$("div").invoke("attr", "id");
-	
-	// is the same as 
-	
-	var getId = $.method("attr", "id");
-	$("div").map(getId);
+```javascript
+$("div").invoke("attr", "id");
+
+// is the same as 
+
+var getId = $.method("attr", "id");
+$("div").map(getId);
+```
 
 ### $.fn.reduce(iterator, seed) → Object
 
@@ -103,10 +115,11 @@ Allows to reduce a list into a single value.
 
 **Example**: Finding the biggest element in a list
 
-	$([1, 2, 3]).inject(function(biggest, value) {
-		return value > biggest ? value : biggest;
-	});
-
+```javascript
+$([1, 2, 3]).inject(function(biggest, value) {
+	return value > biggest ? value : biggest;
+});
+```
 
 ## License
 
