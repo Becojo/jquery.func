@@ -67,11 +67,10 @@ Invokes the interceptor with the current jQuery object and returns the same obje
 
 ```javascript
 var log = function(e){ 
-	// the value of `this` is equal to `e`
 	console.log(e);
 };
 
-$("div").tap(log).reverse().tap(log);
+$("div").intercept(log).reverse().intercept(log);
 ```
 
 **Note**: The object can be modified in the `interceptor`.
@@ -116,7 +115,7 @@ Allows to reduce a list into a single value.
 **Example**: Finding the biggest element in a list
 
 ```javascript
-$([1, 2, 3]).inject(function(biggest, value) {
+$([1, 2, 3]).reduce(function(biggest, value) {
 	return value > biggest ? value : biggest;
 });
 ```
