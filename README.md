@@ -45,7 +45,7 @@ $([1,2,3,4]).all(even); // false;
 $([2,4,6,8]).all(even); // true;
 ```
 
-**Note**: If any of the elements does not pass the truth test, the function quits immediately and returns `false`.
+**Note**: If any of the elements does not pass the truth test, the function quits immediately and returns `false`. In order words, the function should not cause side effects.
 
 ### $.fn.any(iterator) → Boolean
 
@@ -57,7 +57,7 @@ Returns `true` if any of the elements contained in the jQuery object pass the `i
 $([1,3,5,7,8]).any(even); // true
 ```
 
-**Note**: On the first element that passes the truth test, the function quits immediately and returns `true`.
+**Note**: On the first element that passes the truth test, the function quits immediately and returns `true`. In order words, the function should not cause side effects.
 
 ### $.fn.intercept(interceptor) → jQuery object
 
@@ -73,7 +73,7 @@ var log = function(e){
 $("div").intercept(log).reverse().intercept(log);
 ```
 
-**Note**: The object can be modified in the `interceptor`.
+**Note**: The object **can** be modified in the `interceptor`.
 
 ### $.method(name, [args, …]) → Function
 
